@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyHardwareModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CUS_CODE" />
+    </Key>
+    <Property Name="CUS_CODE" Type="int" Nullable="false" />
+    <Property Name="CUS_LNAME" Type="varchar" MaxLength="15" />
+    <Property Name="CUS_FNAME" Type="varchar" MaxLength="15" />
+    <Property Name="CUS_INITIAL" Type="varchar" MaxLength="1" />
+    <Property Name="CUS_AREACODE" Type="varchar" MaxLength="3" />
+    <Property Name="CUS_PHONE" Type="varchar" MaxLength="8" />
+    <Property Name="CUS_BALANCE" Type="real" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="INV_NUMBER" />
+    </Key>
+    <Property Name="INV_NUMBER" Type="int" Nullable="false" />
+    <Property Name="CUS_CODE" Type="int" />
+    <Property Name="INV_DATE" Type="datetime" />
+    <Property Name="INV_SUBTOTAL" Type="real" />
+    <Property Name="INV_TAX" Type="real" />
+    <Property Name="INV_TOTAL" Type="real" />
+  </EntityType>
+  <EntityType Name="Line">
+    <Key>
+      <PropertyRef Name="INV_LINE" />
+    </Key>
+    <Property Name="INV_NUMBER" Type="int" />
+    <Property Name="LINE_NUMBER" Type="int" Nullable="false" />
+    <Property Name="INV_LINE" Type="int" Nullable="false" />
+    <Property Name="P_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="LINE_UNITS" Type="real" />
+    <Property Name="LINE_PRICE" Type="real" />
+    <Property Name="LINE_TOTAL" Type="real" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="P_CODE" />
+    </Key>
+    <Property Name="P_CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="P_DESCRIPT" Type="varchar" MaxLength="35" />
+    <Property Name="P_INDATE" Type="datetime" />
+    <Property Name="P_QOH" Type="int" />
+    <Property Name="P_MIN" Type="int" />
+    <Property Name="P_PRICE" Type="real" />
+    <Property Name="P_DISCOUNT" Type="real" />
+    <Property Name="V_CODE" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="V_CODE" />
+    </Key>
+    <Property Name="V_CODE" Type="int" Nullable="false" />
+    <Property Name="V_NAME" Type="varchar" MaxLength="15" />
+    <Property Name="V_CONTACT" Type="varchar" MaxLength="50" />
+    <Property Name="V_AREACODE" Type="varchar" MaxLength="3" />
+    <Property Name="V_PHONE" Type="varchar" MaxLength="8" />
+    <Property Name="V_STATE" Type="varchar" MaxLength="2" />
+    <Property Name="V_ORDER" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <Association Name="FK__Invoice__CUS_COD__1273C1CD">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CUS_CODE" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="CUS_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Line__INV_NUMBER__1A14E395">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="0..1" />
+    <End Role="Line" Type="Self.Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="INV_NUMBER" />
+      </Principal>
+      <Dependent Role="Line">
+        <PropertyRef Name="INV_NUMBER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Line__P_CODE__1B0907CE">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Line" Type="Self.Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="P_CODE" />
+      </Principal>
+      <Dependent Role="Line">
+        <PropertyRef Name="P_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__V_CODE__173876EA">
+    <End Role="Vendor" Type="Self.Vendor" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="V_CODE" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="V_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyHardwareModelStoreContainer">
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Line" EntityType="Self.Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendor" EntityType="Self.Vendor" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Invoice__CUS_COD__1273C1CD" Association="Self.FK__Invoice__CUS_COD__1273C1CD">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Line__INV_NUMBER__1A14E395" Association="Self.FK__Line__INV_NUMBER__1A14E395">
+      <End Role="Invoice" EntitySet="Invoice" />
+      <End Role="Line" EntitySet="Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Line__P_CODE__1B0907CE" Association="Self.FK__Line__P_CODE__1B0907CE">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Line" EntitySet="Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__V_CODE__173876EA" Association="Self.FK__Product__V_CODE__173876EA">
+      <End Role="Vendor" EntitySet="Vendor" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

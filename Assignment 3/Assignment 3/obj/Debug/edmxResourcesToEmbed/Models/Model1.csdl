@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyHardwareModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CUS_CODE" />
+    </Key>
+    <Property Name="CUS_CODE" Type="Int32" Nullable="false" />
+    <Property Name="CUS_LNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_FNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_INITIAL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_AREACODE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_PHONE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="CUS_BALANCE" Type="Single" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__CUS_COD__1273C1CD" FromRole="Customer" ToRole="Invoice" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="INV_NUMBER" />
+    </Key>
+    <Property Name="INV_NUMBER" Type="Int32" Nullable="false" />
+    <Property Name="CUS_CODE" Type="Int32" />
+    <Property Name="INV_DATE" Type="DateTime" Precision="3" />
+    <Property Name="INV_SUBTOTAL" Type="Single" />
+    <Property Name="INV_TAX" Type="Single" />
+    <Property Name="INV_TOTAL" Type="Single" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Invoice__CUS_COD__1273C1CD" FromRole="Invoice" ToRole="Customer" />
+    <NavigationProperty Name="Lines" Relationship="Self.FK__Line__INV_NUMBER__1A14E395" FromRole="Invoice" ToRole="Line" />
+  </EntityType>
+  <EntityType Name="Line">
+    <Key>
+      <PropertyRef Name="INV_LINE" />
+    </Key>
+    <Property Name="INV_NUMBER" Type="Int32" />
+    <Property Name="LINE_NUMBER" Type="Int32" Nullable="false" />
+    <Property Name="INV_LINE" Type="Int32" Nullable="false" />
+    <Property Name="P_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LINE_UNITS" Type="Single" />
+    <Property Name="LINE_PRICE" Type="Single" />
+    <Property Name="LINE_TOTAL" Type="Single" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK__Line__INV_NUMBER__1A14E395" FromRole="Line" ToRole="Invoice" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Line__P_CODE__1B0907CE" FromRole="Line" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="P_CODE" />
+    </Key>
+    <Property Name="P_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="P_DESCRIPT" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="P_INDATE" Type="DateTime" Precision="3" />
+    <Property Name="P_QOH" Type="Int32" />
+    <Property Name="P_MIN" Type="Int32" />
+    <Property Name="P_PRICE" Type="Single" />
+    <Property Name="P_DISCOUNT" Type="Single" />
+    <Property Name="V_CODE" Type="Int32" />
+    <NavigationProperty Name="Lines" Relationship="Self.FK__Line__P_CODE__1B0907CE" FromRole="Product" ToRole="Line" />
+    <NavigationProperty Name="Vendor" Relationship="Self.FK__Product__V_CODE__173876EA" FromRole="Product" ToRole="Vendor" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="V_CODE" />
+    </Key>
+    <Property Name="V_CODE" Type="Int32" Nullable="false" />
+    <Property Name="V_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="V_CONTACT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="V_AREACODE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="V_PHONE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="V_STATE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="V_ORDER" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__V_CODE__173876EA" FromRole="Vendor" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK__Invoice__CUS_COD__1273C1CD">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CUS_CODE" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="CUS_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Line__INV_NUMBER__1A14E395">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="0..1" />
+    <End Role="Line" Type="Self.Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="INV_NUMBER" />
+      </Principal>
+      <Dependent Role="Line">
+        <PropertyRef Name="INV_NUMBER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Line__P_CODE__1B0907CE">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Line" Type="Self.Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="P_CODE" />
+      </Principal>
+      <Dependent Role="Line">
+        <PropertyRef Name="P_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__V_CODE__173876EA">
+    <End Role="Vendor" Type="Self.Vendor" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="V_CODE" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="V_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyHardwareEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+    <EntitySet Name="Lines" EntityType="Self.Line" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Vendors" EntityType="Self.Vendor" />
+    <AssociationSet Name="FK__Invoice__CUS_COD__1273C1CD" Association="Self.FK__Invoice__CUS_COD__1273C1CD">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Line__INV_NUMBER__1A14E395" Association="Self.FK__Line__INV_NUMBER__1A14E395">
+      <End Role="Invoice" EntitySet="Invoices" />
+      <End Role="Line" EntitySet="Lines" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Line__P_CODE__1B0907CE" Association="Self.FK__Line__P_CODE__1B0907CE">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Line" EntitySet="Lines" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__V_CODE__173876EA" Association="Self.FK__Product__V_CODE__173876EA">
+      <End Role="Vendor" EntitySet="Vendors" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

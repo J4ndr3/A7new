@@ -1,0 +1,12 @@
+<h1>Home</h1>
+
+  <table *ngIf="users">
+    <th>ID</th>
+    <th>Description</th>
+    <tr *ngFor="let user of users">
+      <td >{{ user.ID }}</td>
+      <td >{{ user.Desc }}</td>
+    </tr>
+  </table>
+   
+  
