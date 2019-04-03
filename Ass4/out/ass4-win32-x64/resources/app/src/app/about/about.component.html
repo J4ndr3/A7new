@@ -1,0 +1,34 @@
+<h1>Login as Clerk</h1>
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+
+    <h5 *ngIf="success">Your form is valid!</h5>
+
+    <label>
+      ID:
+      <input type="text" formControlName="name">
+      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">An UserID is required</div>
+      </div>
+    </label>
+  
+    <label>
+      Description:
+      <textarea formControlName="message"></textarea>
+      <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
+        <div *ngIf="messageForm.controls.message.errors.required">A Password</div>
+      </div>
+    </label>
+
+    <input type="submit" value="Add Item" class="cta" >
+  
+  </form>
+
+  <div *ngIf="submitted" class="results">
+    <strong>ID:</strong> 
+    <span>{{ messageForm.controls.name.value }}</span>
+
+    <strong>Description:</strong> 
+    <span>{{ messageForm.controls.message.value }}</span>
+   
+  </div>
