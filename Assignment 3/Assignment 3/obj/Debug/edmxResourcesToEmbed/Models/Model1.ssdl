@@ -58,6 +58,17 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Pass" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+    <Property Name="SessionID" Type="varchar" MaxLength="50" />
+    <Property Name="GUIDEXP" Type="datetime2" Precision="7" />
+    <Property Name="Manager" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="Vendor">
     <Key>
       <PropertyRef Name="V_CODE" />
@@ -124,6 +135,7 @@
     <EntitySet Name="Line" EntityType="Self.Line" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Vendor" EntityType="Self.Vendor" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Invoice__CUS_COD__1273C1CD" Association="Self.FK__Invoice__CUS_COD__1273C1CD">
       <End Role="Customer" EntitySet="Customer" />

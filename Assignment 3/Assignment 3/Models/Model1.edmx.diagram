@@ -15,6 +15,7 @@
         <AssociationConnector Association="MyHardwareModel.FK__Line__INV_NUMBER__1A14E395" ManuallyRouted="false" />
         <AssociationConnector Association="MyHardwareModel.FK__Line__P_CODE__1B0907CE" ManuallyRouted="false" />
         <AssociationConnector Association="MyHardwareModel.FK__Product__V_CODE__173876EA" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MyHardwareModel.User" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

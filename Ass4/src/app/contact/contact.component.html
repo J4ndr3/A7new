@@ -1,24 +1,44 @@
-<h1>Enter new product</h1>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" *ngIf="!success">
+    <h1>Login as Manager</h1>
+    <label>
+      UserID:
+      <input type="text" formControlName="name">
+      <div *ngIf="submitted && loginForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">An UserID is required</div>
+      </div>
+    </label>
+  
+    <label>
+      Password:
+      <input type="password" formControlName="message">
+      <div *ngIf="submitted && loginForm.controls.message.errors" class="error">
+        <div *ngIf="messageForm.controls.message.errors.required">A Password is required</div>
+      </div>
+    </label>
 
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <input type="submit" value="Add Item" class="cta" >
+  </form>
+  <form [formGroup]="messageForm" (ngSubmit)="onLogOut()" *ngIf="success">
+      <input type="submit" value="Logout" class="cta" >
+  </form>
 
-    <h5 *ngIf="success">Your form is valid!</h5>
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit1()" *ngIf="success" >
+    <h1>Enter new product</h1>
+    <h5 *ngIf="adsucc">Your data was added!</h5>
 
     <label>
       ID:
-      <input type="text" formControlName="name" appValidInput>
+      <input type="text" formControlName="name" >
       <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
         <div *ngIf="messageForm.controls.name.errors.required">An ID is required</div>
-        <div *ngIf="messageForm.controls.name.errors">Incorrect length</div>
       </div>
     </label>
   
     <label>
       Description:
-      <textarea formControlName="message" appValidDesc></textarea>
+      <textarea formControlName="message" ></textarea>
       <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
         <div *ngIf="messageForm.controls.message.errors.required">A Description is required</div>
-        <div *ngIf="messageForm.controls.message.errors">Needs to be more tahn 10 characters long</div>
       </div>
     </label>
 
@@ -26,11 +46,18 @@
   
   </form>
 
-  <div *ngIf="submitted" class="results">
-    <strong>ID:</strong> 
-    <span>{{ messageForm.controls.name.value }}</span>
-
-    <strong>Description:</strong> 
-    <span>{{ messageForm.controls.message.value }}</span>
-   
-  </div>
+  <div  *ngIf="success" class="results">
+      <h1>Product Table</h1>
+    
+      <table *ngIf="users1">
+        <th>ID</th>
+        <th>Description</th>
+        <tr *ngFor="let user of users1">
+          <td >{{ user.ID }}</td>
+          <td >{{ user.Desc }}</td>
+        </tr>
+      </table>
+     
+    </div>
+    
+    

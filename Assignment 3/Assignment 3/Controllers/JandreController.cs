@@ -7,11 +7,15 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Data.Entity;
 using Assignment_3.Models;
+using System.Web.SessionState;
+using System.Web;
 
 namespace Assignment_3.Controllers
 {
     public class JandreController : ApiController
     {
+        public User user1;
+        
         [System.Web.Mvc.Route("api/Jandre/getProducts")]
         [HttpGet]
         public HttpResponseMessage getProducts()
@@ -92,6 +96,64 @@ namespace Assignment_3.Controllers
             db.SaveChanges();
             return getProducts();
         }
-          
+        [System.Web.Mvc.Route("api/Jandre/ValUser")]
+        [HttpGet]
+        public HttpResponseMessage ValUser([FromUri] User userDet)
+        {
+            MyHardwareEntities db = new MyHardwareEntities();
+            bool UseInDb =false;
+            if (db.Users.Where(zz => zz.UserID == userDet.UserID).Count() ==1 && db.Users.Where(zz => zz.Pass == userDet.Pass).Count() == 1)
+            {
+                UseInDb = true;
+            }
+            if (UseInDb)
+            {
+                RefreshGUID(userDet);
+                userDet = db.Users.Where(zz => zz.UserID == userDet.UserID).FirstOrDefault();
+                if (userDet.Manager)
+                {
+                    List<dynamic> uselit = new List<dynamic>();
+                    dynamic user1 = new ExpandoObject();
+                    user1.Manager = userDet.Manager;
+                    user1.GUID = userDet.GUID;
+                    uselit.Add(user1);
+                    var response1 = Request.CreateResponse(HttpStatusCode.OK, uselit);
+                    response1.Headers.Add("Access-Control-Allow-Origin", "*");
+                    return response1;
+                }
+                else
+                {
+                    List<dynamic> uselit = new List<dynamic>();
+                    dynamic user1 = new ExpandoObject();
+                    user1.Manager = userDet.Manager;
+                    user1.GUID = userDet.GUID;
+                    uselit.Add(user1);
+                    var response1 = Request.CreateResponse(HttpStatusCode.OK, uselit);
+                    response1.Headers.Add("Access-Control-Allow-Origin", "*");
+                    return response1;
+                }
+            }
+            var response = Request.CreateResponse(HttpStatusCode.OK, "Access not allowed");
+            response.Headers.Add("Access-Control-Allow-Origin", "*");
+            return response;
+        }
+        public void RefreshGUID(User use)
+        {
+            MyHardwareEntities db = new MyHardwareEntities();
+            db.Configuration.ProxyCreationEnabled = false;
+            use.Manager = db.Users.Where(zz => zz.UserID == use.UserID).Select(zz => zz.Manager).Single();
+            use.GUID = Guid.NewGuid();
+            use.GUIDEXP = DateTime.Now.AddMinutes(30);
+            var guids = db.Users.Where(zz => zz.GUID == use.GUID).Count();
+            if (guids > 0)
+                RefreshGUID(use);
+            else
+            {
+                var u = db.Users.Where(zz => zz.UserID == use.UserID).FirstOrDefault();
+                db.Entry(u).CurrentValues.SetValues(use);
+                db.SaveChanges();
+            }
+        }
+       
     }
 }

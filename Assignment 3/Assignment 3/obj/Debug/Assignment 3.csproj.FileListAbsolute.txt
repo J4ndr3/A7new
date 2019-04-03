@@ -178,3 +178,93 @@ C:\Users\jandr\Desktop\Git\Activity3\Assignment 3\Assignment 3\bin\System.Web.Ht
 C:\Users\jandr\Desktop\Git\Activity3\Assignment 3\Assignment 3\obj\Debug\Assignment 3.csprojResolveAssemblyReference.cache
 C:\Users\jandr\Desktop\Git\Activity3\Assignment 3\Assignment 3\obj\Debug\Assignment 3.dll
 C:\Users\jandr\Desktop\Git\Activity3\Assignment 3\Assignment 3\obj\Debug\Assignment 3.pdb
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\obj\Debug\Assignment 3.csprojResolveAssemblyReference.cache
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\obj\Debug\Assignment 3.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\obj\Debug\Assignment 3.pdb
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\ApplicationInsights.config
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\csc.exe
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\vbc.exe
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\VBCSCompiler.exe
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Assignment 3.dll.config
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Assignment 3.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Assignment 3.pdb
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Antlr3.Runtime.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\EntityFramework.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\EntityFramework.SqlServer.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AI.Web.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.ApplicationInsights.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Newtonsoft.Json.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Owin.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Net.Http.Formatting.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Helpers.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Http.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Http.Owin.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Http.WebHost.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Mvc.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Optimization.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Razor.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.WebPages.Deployment.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.WebPages.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.WebPages.Razor.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\WebGrease.dll
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AI.Web.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.ApplicationInsights.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Net.Http.Formatting.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Http.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Newtonsoft.Json.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Helpers.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Http.WebHost.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Mvc.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Optimization.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Razor.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.WebPages.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.WebPages.Razor.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Antlr3.Runtime.pdb
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\EntityFramework.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\EntityFramework.SqlServer.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\jandr\Desktop\Git\activity7\Assignment 3\Assignment 3\bin\System.Web.Http.Owin.xml
