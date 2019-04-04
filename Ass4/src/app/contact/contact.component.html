@@ -1,5 +1,6 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" *ngIf="!success">
     <h1>Login as Manager</h1>
+    <h1 *ngIf="isManger">The user name or password for manager is incorrect</h1>
     <label>
       UserID:
       <input type="text" formControlName="name">

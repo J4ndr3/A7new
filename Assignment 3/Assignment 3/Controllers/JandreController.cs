@@ -102,7 +102,7 @@ namespace Assignment_3.Controllers
         {
             MyHardwareEntities db = new MyHardwareEntities();
             bool UseInDb =false;
-            if (db.Users.Where(zz => zz.UserID == userDet.UserID).Count() ==1 && db.Users.Where(zz => zz.Pass == userDet.Pass).Count() == 1)
+            if (db.Users.Where(zz => zz.UserID == userDet.UserID && zz.Pass == userDet.Pass).Count() ==1)
             {
                 UseInDb = true;
             }
@@ -133,9 +133,13 @@ namespace Assignment_3.Controllers
                     return response1;
                 }
             }
-            var response = Request.CreateResponse(HttpStatusCode.OK, "Access not allowed");
-            response.Headers.Add("Access-Control-Allow-Origin", "*");
-            return response;
+            else
+            {
+                var response = Request.CreateResponse(HttpStatusCode.OK, "Access not allowed");
+                response.Headers.Add("Access-Control-Allow-Origin", "*");
+                return response;
+            }
+            
         }
         public void RefreshGUID(User use)
         {

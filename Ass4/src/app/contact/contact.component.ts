@@ -19,6 +19,8 @@ export class ContactComponent implements OnInit {
   us:object;
   manager: boolean;
   GUID: string;
+  isManger: boolean = false;
+  manerr:boolean = false;
   constructor(private formBuilder: FormBuilder, private data: DataService) { }
 
   ngOnInit() {
@@ -59,9 +61,11 @@ export class ContactComponent implements OnInit {
         console.log(this.users1)
       })
       console.log(this.manager);
+      this.isManger = false;
     }
     else
     {
+      this.isManger = true;
       this.success = false;
     }
     });
